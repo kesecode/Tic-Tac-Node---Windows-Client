@@ -1,0 +1,206 @@
+﻿<Application x:Class="Tic_Tac_Node__Windows_Client.Application"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:css="clr-namespace:XamlCSS;assembly=XamlCSS"
+             xmlns:local="clr-namespace:Tic_Tac_Node__Windows_Client"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        
+          <!--ROUND BUTTON TEMPLATE-->
+          <Style x:Key="RoundButtonTemplate" TargetType="Button">
+            <Setter Property="Background" Value="#17a2b8" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="150" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="7" Background="{TemplateBinding Background}" BorderBrush="#212529" BorderThickness="1.5">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#0f7b8b"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" Value="#07535f"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <!--PLACE HOLDER-->
+        <Style x:Key="placeHolder" TargetType="{x:Type TextBox}" BasedOn="{StaticResource {x:Type TextBox}}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Grid>
+                            <TextBox Text="{Binding Path=Text,
+                                                RelativeSource={RelativeSource TemplatedParent}, 
+                                                Mode=TwoWay,
+                                                UpdateSourceTrigger=PropertyChanged}"
+                                 x:Name="textSource" 
+                                 FontSize="18" 
+                                 HorizontalContentAlignment="Center" 
+                                 VerticalContentAlignment="Center"
+                                 Background="Transparent" 
+                                 Panel.ZIndex="2" />
+                            <TextBox Text="{TemplateBinding Tag}" FontSize="13" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Background="{TemplateBinding Background}" Panel.ZIndex="1">
+                                <TextBox.Style>
+                                    <Style TargetType="{x:Type TextBox}">
+                                        <Setter Property="Foreground" Value="Transparent"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Path=Text, Source={x:Reference textSource}}" Value="">
+                                                <Setter Property="Foreground" Value="LightGray"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBox.Style>
+                            </TextBox>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!--GREEN LABEL STYLE-->
+        <Style x:Key="GreenLabel" TargetType="Label">
+            <Setter Property="Background" Value="#28a745" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontFamily" Value="Neucha" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Label">
+                        <Border CornerRadius="3" Background="{TemplateBinding Background}" BorderBrush="#212529" Margin="3" Padding="5" BorderThickness="1">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!--BLUE LABEL STYLE-->
+        <Style x:Key="BlueLabel" TargetType="Label">
+            <Setter Property="Background" Value="#17a2b8" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontFamily" Value="Neucha" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Label">
+                        <Border CornerRadius="3" Background="{TemplateBinding Background}" BorderBrush="#212529" Margin="3" Padding="5" BorderThickness="1">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!--YELLOW LABEL STYLE-->
+        <Style x:Key="YellowLabel" TargetType="Label">
+            <Setter Property="Background" Value="#ffc107" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontFamily" Value="Neucha" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Label">
+                        <Border CornerRadius="3" Background="{TemplateBinding Background}" BorderBrush="#212529" Margin="3" Padding="5" BorderThickness="1">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!--BLACK LABEL STYLE-->
+        <Style x:Key="BlackLabel" TargetType="Label">
+            <Setter Property="Background" Value="#212529" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontFamily" Value="Neucha" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Label">
+                        <Border CornerRadius="3" Background="{TemplateBinding Background}" BorderBrush="#212529" Margin="3" Padding="5" BorderThickness="1">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!--PRIMARY BUTTON STYLE-->
+        <Style x:Key="PrimaryButton" TargetType="Button">
+            <Setter Property="Background" Value="#333" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontFamily" Value="Neucha"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="3" Background="{TemplateBinding Background}" BorderBrush="#212529" Margin="3" Padding="7" BorderThickness="1">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#212529"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" Value="#6f6f6f"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <!--CLOSE BUTTON STYLE-->
+        <Style x:Key="CloseButton" TargetType="Button">
+            <Setter Property="Background" Value="#FF555555" />
+            <Setter Property="Content" Value="x" />
+            <Setter Property="FontSize" Value="30" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Foreground" Value="DarkGray"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Foreground" Value="LightGray"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+
+        <css:StyleSheet x:Key="inlineStyle" xml:space="preserve">
+        <css:StyleSheet.Content>
+          <![CDATA[
+
+            .jumbotron {
+                padding: 2rem 1rem;
+                margin-bottom: 2rem;
+                background-color: #e6e6e6;
+                border-radius: 555px 25px 15px 25px/25px 5px 35px 555px;
+                }
+            @media (min-width: 576px) {
+            .jumbotron {
+                padding: 4rem 2rem; } }
+            .borderstyle {
+                border-radius: 555px 25px 15px 25px/25px 5px 35px 555px;
+            }
+            
+            .rrred {
+                background-color: red;
+            }
+          ]]>
+        </css:StyleSheet.Content>
+      </css:StyleSheet>
+
+    </Application.Resources>
+</Application>
+
+

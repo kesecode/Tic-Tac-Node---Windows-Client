@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="Tic_Tac_Node__Windows_Client.View.LobbyView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:chat="clr-namespace:Tic_Tac_Node__Windows_Client.UiComponent.Chat"
+             xmlns:batches="clr-namespace:Tic_Tac_Node__Windows_Client.UiComponent.Batches"
+             xmlns:buttons="clr-namespace:Tic_Tac_Node__Windows_Client.UiComponent.Buttons"
+             xmlns:local="clr-namespace:Tic_Tac_Node__Windows_Client.View"
+             mc:Ignorable="d" 
+             FontFamily="Neucha" Background="Transparent">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="450"/>
+                <ColumnDefinition Width="500"/>
+                <ColumnDefinition Width="450"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="1">
+                <chat:ChatWrapperControl x:Name="ChatWrapperControl"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

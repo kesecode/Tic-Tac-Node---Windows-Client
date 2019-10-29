@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="Tic_Tac_Node__Windows_Client.UiComponent.Chat.ChatComponent.ChatItemControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:cssWPF="clr-namespace:XamlCSS.WPF;assembly=XamlCSS.WPF"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" d:DesignWidth="450">
+    <Border Background="Transparent" BorderThickness="2">
+            <!-- Chat message container -->
+
+        <Grid Margin="30 4 10 4" HorizontalAlignment="Left" Width="400">
+
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Border BorderBrush="{Binding Borderbrush}" BorderThickness="1" CornerRadius="3">
+            <!-- Speech bubble rectangle -->
+            <Border CornerRadius="0"
+                    Padding="8"
+                    Background="{Binding Background}">
+
+                <!-- Message text -->
+                <TextBlock VerticalAlignment="Center"
+                           TextWrapping="Wrap"
+                           FontSize="16"
+                           FontFamily="Neucha"
+                           Foreground="Black"
+                           Text="{Binding Text}"/>
+            </Border>
+            </Border>
+        </Grid>
+    </Border>
+</UserControl>

@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="Tic_Tac_Node__Windows_Client.UiComponent.Chat.ChatComponent.InvitationSentControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Tic_Tac_Node__Windows_Client.UiComponent.Chat.ChatComponent"
+             mc:Ignorable="d" d:DesignWidth="450">
+    <Border Background="Transparent" BorderThickness="2">
+        <!-- Chat message container -->
+        <Grid Margin="30 4 10 4" HorizontalAlignment="Left" Width="400">
+
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <!-- Speech bubble rectangle -->
+            <Border BorderBrush="{Binding Borderbrush}" BorderThickness="1" CornerRadius="3" Background="{Binding Background}">
+                <StackPanel Orientation="Horizontal">
+                    <!-- Message text -->
+                    <StackPanel Width="450">
+                        <Border BorderBrush="{Binding Borderbrush}" BorderThickness="0 0 0 1" Background="{Binding Background}">
+                            <TextBlock VerticalAlignment="Center"
+                               Padding="9"
+                               Width="Auto"
+                               TextWrapping="Wrap"
+                               FontSize="15"
+                               FontFamily="Neucha"
+                               Foreground="#fff"
+                               Text="{Binding Title}" 
+                               Height="40"/>
+                        </Border>
+                        <Border BorderBrush="{Binding Borderbrush}" BorderThickness="0" Background="{Binding Background}">
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock VerticalAlignment="Center"
+                                   Padding="9"
+                                   Width="Auto"
+                                   TextWrapping="Wrap"
+                                   FontSize="23"
+                                   FontFamily="Cabin Sketch"
+                                   Foreground="#fff"
+                                   Text="{Binding SecondTitle}" 
+                                   Height="40"/>
+                                <ProgressBar Height="20" IsIndeterminate="True" Background="Gray" Foreground="LightGray" Margin="6,0,63,0"/>
+                            </StackPanel>
+                        </Border>
+                        <Border BorderBrush="{Binding Borderbrush}" BorderThickness="0" Background="{Binding Background}">
+                            <StackPanel Orientation="Horizontal">
+                                <Button x:Name="CancelButton" Margin="5 10 10 10" Padding="4" Height="32" Width="Auto" Background="#ffc107" Foreground="#fff" BorderBrush="Transparent" Content="Cancel" FontFamily="Neucha" Click="CancelButton_Click"/>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Border>
+</UserControl>

@@ -1,0 +1,11 @@
+﻿<UserControl x:Class="Tic_Tac_Node__Windows_Client.UiComponent.Buttons.RevancheButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Tic_Tac_Node__Windows_Client.UiComponent.Buttons"
+             mc:Ignorable="d">
+    <Grid>
+        <Button Height="Auto" Width="Auto" Background="Transparent" BorderBrush="Transparent" Content="Revanche" FontFamily="Neucha" Click="Revanche_Click"/>
+    </Grid>
+</UserControl>

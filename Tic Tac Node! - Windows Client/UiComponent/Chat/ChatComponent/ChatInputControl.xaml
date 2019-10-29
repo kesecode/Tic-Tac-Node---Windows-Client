@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="Tic_Tac_Node__Windows_Client.UiComponent.Chat.ChatComponent.ChatInputControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Tic_Tac_Node__Windows_Client.UiComponent.Chat.ChatComponent"
+             xmlns:buttons="clr-namespace:Tic_Tac_Node__Windows_Client.UiComponent.Buttons"
+             mc:Ignorable="d" 
+             d:DesignHeight="110" d:DesignWidth="500">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="400"/>
+            <ColumnDefinition Width="70"/>
+            <ColumnDefinition Width="30"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="1" Grid.Column="0" BorderBrush="#212529" Width="300" Height="30" BorderThickness="0.7" CornerRadius="2" Padding="0">
+            <TextBox x:Name="ChatInput" VerticalContentAlignment="Center" FontSize="15" PreviewTextInput="ChatInput_previewtextinput" />
+        </Border>
+        <buttons:ChatSubmitButtonControl x:Name="ChatSubmitButton" Grid.Column="1" Grid.Row="1"/>
+    </Grid>
+</UserControl>
