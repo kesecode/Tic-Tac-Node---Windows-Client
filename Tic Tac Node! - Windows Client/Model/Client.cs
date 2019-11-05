@@ -82,14 +82,14 @@ namespace Tic_Tac_Node__Windows_Client.Model
         {
             Socket.Emit("revancheAccept");
             MessageList.Clear();
-            MessageList.Add(new Message("//TODO// Accepted", MessageDisplayType.MessageInfo));
+            MessageList.Add(new Message(Client.OpponentsName + " accepted a revanche", MessageDisplayType.MessageInfo));
         }
 
         static public void AcceptPlayAgain()
         {
             Socket.Emit("playAgainAccept");
             MessageList.Clear();
-            MessageList.Add(new Message("//TODO// Accepted", MessageDisplayType.MessageInfo));
+            MessageList.Add(new Message(Client.OpponentsName + " accepted a rematch", MessageDisplayType.MessageInfo));
         }
 
         static public void DeclineInvitation()

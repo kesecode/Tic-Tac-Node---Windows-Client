@@ -45,16 +45,16 @@
                             <RowDefinition Height="33*"/>
                             <RowDefinition Height="33*"/>
                         </Grid.RowDefinitions>
-
-                        <Button Style="{StaticResource RoundButtonTemplate}" x:Name="Button0" Height="130" Width="130" Margin="20, 20, 10 ,10" Click="Button0_Click" Grid.Row="0" Grid.Column="0" Content="" FontSize="110" RenderTransformOrigin="0.5,0.5"/>
-                        <Button Style="{StaticResource RoundButtonTemplate}" x:Name="Button1" Height="130" Width="130" Margin="10, 20, 10, 10" Click="Button1_Click" Grid.Row="0" Grid.Column="1" Content="" FontSize="110" RenderTransformOrigin="0.5,0.5"/>
-                        <Button Style="{StaticResource RoundButtonTemplate}" x:Name="Button2" Height="130" Width="130" Margin="10, 20, 20, 10" Click="Button2_Click" Grid.Row="0" Grid.Column="2" Content="" FontSize="110" RenderTransformOrigin="0.5,0.5"/>
-                        <Button Style="{StaticResource RoundButtonTemplate}" x:Name="Button3" Height="130" Width="130" Margin="20, 10, 10, 10" Click="Button3_Click" Grid.Row="1" Grid.Column="0" Content="" FontSize="110" RenderTransformOrigin="0.5,0.5"/>
-                        <Button Style="{StaticResource RoundButtonTemplate}" x:Name="Button4" Height="130" Width="130" Margin="10, 10, 10, 10" Click="Button4_Click" Grid.Row="1" Grid.Column="1" Content="" FontSize="110" RenderTransformOrigin="0.5,0.5"/>
-                        <Button Style="{StaticResource RoundButtonTemplate}" x:Name="Button5" Height="130" Width="130" Margin="10, 10, 20, 10" Click="Button5_Click" Grid.Row="1" Grid.Column="2" Content="" FontSize="110" RenderTransformOrigin="0.5,0.5"/>
-                        <Button Style="{StaticResource RoundButtonTemplate}" x:Name="Button6" Height="130" Width="130" Margin="20, 10, 10, 20" Click="Button6_Click" Grid.Row="2" Grid.Column="0" Content="" FontSize="110" RenderTransformOrigin="0.5,0.5"/>
-                        <Button Style="{StaticResource RoundButtonTemplate}" x:Name="Button7" Height="130" Width="130" Margin="10, 10, 10, 20" Click="Button7_Click" Grid.Row="2" Grid.Column="1" Content="" FontSize="110" RenderTransformOrigin="0.5,0.5"/>
-                        <Button Style="{StaticResource RoundButtonTemplate}" x:Name="Button8" Height="130" Width="130" Margin="10, 10, 20, 20" Click="Button8_Click" Grid.Row="2" Grid.Column="2" Content="" FontSize="110" RenderTransformOrigin="0.5,0.5"/>
+        <!--Links Oben Rechts Unten-->
+                        <Button Style="{StaticResource RoundButtonTemplate}" x:Name="Button0" Height="135" Width="135" Margin="10, 10, 5 ,5" Click="Button0_Click" Grid.Row="0" Grid.Column="0" Content="" FontSize="110" RenderTransformOrigin="0.5,0.5"/>
+                        <Button Style="{StaticResource RoundButtonTemplate}" x:Name="Button1" Height="135" Width="135" Margin="5, 10, 5, 5" Click="Button1_Click" Grid.Row="0" Grid.Column="1" Content="" FontSize="110" RenderTransformOrigin="0.5,0.5"/>
+                        <Button Style="{StaticResource RoundButtonTemplate}" x:Name="Button2" Height="135" Width="135" Margin="5, 10, 10, 5" Click="Button2_Click" Grid.Row="0" Grid.Column="2" Content="" FontSize="110" RenderTransformOrigin="0.5,0.5"/>
+                        <Button Style="{StaticResource RoundButtonTemplate}" x:Name="Button3" Height="135" Width="135" Margin="10, 5, 5, 5" Click="Button3_Click" Grid.Row="1" Grid.Column="0" Content="" FontSize="110" RenderTransformOrigin="0.5,0.5"/>
+                        <Button Style="{StaticResource RoundButtonTemplate}" x:Name="Button4" Height="135" Width="135" Margin="5, 5, 5, 5" Click="Button4_Click" Grid.Row="1" Grid.Column="1" Content="" FontSize="110" RenderTransformOrigin="0.5,0.5"/>
+                        <Button Style="{StaticResource RoundButtonTemplate}" x:Name="Button5" Height="135" Width="135" Margin="5, 5, 10, 5" Click="Button5_Click" Grid.Row="1" Grid.Column="2" Content="" FontSize="110" RenderTransformOrigin="0.5,0.5"/>
+                        <Button Style="{StaticResource RoundButtonTemplate}" x:Name="Button6" Height="135" Width="135" Margin="10, 5, 5, 10" Click="Button6_Click" Grid.Row="2" Grid.Column="0" Content="" FontSize="110" RenderTransformOrigin="0.5,0.5"/>
+                        <Button Style="{StaticResource RoundButtonTemplate}" x:Name="Button7" Height="135" Width="135" Margin="5, 5, 5, 10" Click="Button7_Click" Grid.Row="2" Grid.Column="1" Content="" FontSize="110" RenderTransformOrigin="0.5,0.5"/>
+                        <Button Style="{StaticResource RoundButtonTemplate}" x:Name="Button8" Height="135" Width="135" Margin="5, 5, 10, 10" Click="Button8_Click" Grid.Row="2" Grid.Column="2" Content="" FontSize="110" RenderTransformOrigin="0.5,0.5"/>
 
                     </Grid>
                 </Border>
